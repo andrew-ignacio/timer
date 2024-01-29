@@ -16,6 +16,10 @@
   padding: 20px;
 }
 
+.inactive {
+  color: #ccc;
+}
+
 .title, .timer {
   font-size: 3em;
 }

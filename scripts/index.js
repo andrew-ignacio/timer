@@ -28,14 +28,20 @@ function startTimer() {
 start.addEventListener('click', (event) => {
   clearInterval(clock);
   startTimer();
+
+  timer.classList.remove('inactive');
 })
 
 pause.addEventListener('click', (event) => {
   clearInterval(clock);
+
+  timer.classList.add('inactive');
 })
 
 reset.addEventListener('click', (event) => {
   clearInterval(clock);
   timer.innerHTML = '00:00:00';
   seconds = 0;
+
+  timer.classList.add('inactive');
 })
