@@ -7,6 +7,7 @@ const pause = document.querySelector('.pause');
 const reset = document.querySelector('.reset');
 
 let seconds = 0;
+let clock;
 
 function getTimeInSeconds(seconds) {
   const date = new Date(seconds * 1000);
@@ -18,20 +19,23 @@ function getTimeInSeconds(seconds) {
 }
 
 function startTimer() {
-  const clock = setInterval(() => {
+  clock = setInterval(() => {
     seconds++;
     timer.innerHTML = getTimeInSeconds(seconds);
   }, 1000);
 }
 
 start.addEventListener('click', (event) => {
+  clearInterval(clock);
   startTimer();
 })
 
 pause.addEventListener('click', (event) => {
-
+  clearInterval(clock);
 })
 
 reset.addEventListener('click', (event) => {
-
+  clearInterval(clock);
+  timer.innerHTML = '00:00:00';
+  seconds = 0;
 })
